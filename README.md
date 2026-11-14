@@ -6,6 +6,8 @@
 
 **▶ Play it live: https://outpost-junior-astronaut.vercel.app**
 
+🎬 **30-second demo:** [docs/OUTPOST-demo.mp4](./docs/OUTPOST-demo.mp4) · 📄 **Submission write-up:** [SUBMISSION.md](./SUBMISSION.md)
+
 A browser game for **ages 7–12**. You run a **Moon or Mars base**. Each **sol** (day) you get a limited amount of **power** and must split it across the crew's competing needs — **life support, shielding, food, science, and crew rest**. You can't fund everything, so every choice costs something. Real NASA space-weather data drives the hazards.
 
 > Challenge brief: *"...let kids ages 7–12 manage a lunar or Martian outpost, making real decisions about life support, radiation shielding, power budgeting, food production, and communication delay... every decision teaches something true about what astronauts and mission planners actually navigate."*
