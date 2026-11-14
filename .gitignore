@@ -5,3 +5,5 @@ dev-dist
 
 dev-dist
 .env
+
+.vercel
