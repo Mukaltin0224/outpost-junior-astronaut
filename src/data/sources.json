@@ -1,0 +1,16 @@
+{
+  "sources": [
+    { "id": "donki", "n": 1, "title": "NASA DONKI — Space Weather Database Of Notifications, Knowledge, Information", "url": "https://ccmc.gsfc.nasa.gov/tools/DONKI/", "real": true },
+    { "id": "donki_api", "n": 2, "title": "NASA Open APIs — DONKI solar flare (FLR) endpoint", "url": "https://api.nasa.gov/", "real": true },
+    { "id": "osdr", "n": 3, "title": "NASA Open Science Data Repository (OSDR) — astronaut & spaceflight biology", "url": "https://osdr.nasa.gov/bio/", "real": true },
+    { "id": "rad", "n": 4, "title": "MSL RAD — radiation on the way to and on the surface of Mars (Hassler et al., Science 2014)", "url": "https://science.nasa.gov/mission/msl-curiosity/", "real": true },
+    { "id": "moonrad", "n": 5, "title": "Chang'e-4 LND — first in-situ radiation measurement on the lunar surface (Zhang et al., Science Advances 2020)", "url": "https://www.science.org/doi/10.1126/sciadv.aaz1334", "real": true },
+    { "id": "marsfacts", "n": 6, "title": "NASA Science — Mars facts (sol length, solar distance, temperature)", "url": "https://science.nasa.gov/mars/facts/", "real": true },
+    { "id": "duststorm", "n": 7, "title": "NASA — The Fact and Fiction of Martian Dust Storms (power impact on solar missions)", "url": "https://www.nasa.gov/science-research/the-fact-and-fiction-of-martian-dust-storms/", "real": true },
+    { "id": "artemis", "n": 8, "title": "NASA Artemis — returning humans to the Moon", "url": "https://www.nasa.gov/humans-in-space/artemis/", "real": true },
+    { "id": "moonnight", "n": 9, "title": "NASA Science — the Moon's day/night cycle (~29.5 Earth days)", "url": "https://science.nasa.gov/moon/", "real": true },
+    { "id": "comms", "n": 10, "title": "NASA — communicating across the solar system (Earth–Mars light-time 3–22 min)", "url": "https://science.nasa.gov/mars/", "real": true },
+    { "id": "spaceweather", "n": 11, "title": "NOAA/NASA — solar flare classes (C / M / X) and their effects", "url": "https://www.swpc.noaa.gov/phenomena/solar-flares-radio-blackouts", "real": true },
+    { "id": "model", "n": 0, "title": "Game model (simplified for play)", "url": "", "real": false }
+  ]
+}

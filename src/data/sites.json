@@ -1,0 +1,79 @@
+{
+  "moon": {
+    "code": "LUNA-1",
+    "totalSols": 10,
+    "powerBudget": 8,
+    "scienceGoal": 48,
+    "doseLimit": 22,
+    "doseRate": 1.3,
+    "commsMin": 0.02,
+    "tutorial": true,
+    "start": {
+      "life": 70,
+      "shield": 46,
+      "food": 72,
+      "health": 85
+    },
+    "demand": {
+      "life": 12,
+      "food": 10,
+      "shieldDecay": 5,
+      "healthDecay": 1
+    },
+    "restore": {
+      "life": 5,
+      "shield": 6,
+      "food": 5,
+      "science": 6,
+      "crew": 6
+    },
+    "nightSols": [
+      6,
+      7,
+      8
+    ],
+    "nightPowerFactor": 0.45,
+    "dustSols": [],
+    "dustPowerFactor": 1,
+    "flares": 2
+  },
+  "mars": {
+    "code": "ARES-1",
+    "totalSols": 12,
+    "powerBudget": 8,
+    "scienceGoal": 66,
+    "doseLimit": 30,
+    "doseRate": 0.7,
+    "commsMin": 12,
+    "tutorial": false,
+    "start": {
+      "life": 74,
+      "shield": 48,
+      "food": 80,
+      "health": 82
+    },
+    "demand": {
+      "life": 12,
+      "food": 10,
+      "shieldDecay": 5,
+      "healthDecay": 1
+    },
+    "restore": {
+      "life": 5,
+      "shield": 6,
+      "food": 5,
+      "science": 6,
+      "crew": 6
+    },
+    "nightSols": [],
+    "nightPowerFactor": 1,
+    "dustSols": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "dustPowerFactor": 0.5,
+    "flares": 2
+  }
+}
