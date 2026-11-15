@@ -83,8 +83,9 @@ li.t::before{background:var(--teal)} li.g::before{background:var(--gold)}
   @page{size:1280px 720px;margin:0}
   body{background:#fff;display:block}
   #nav{display:none}
-  .deck{width:1280px;height:720px;aspect-ratio:auto;box-shadow:none;border-radius:0;page-break-after:always;margin:0}
-  .slide{display:flex !important;position:relative;animation:none !important;opacity:1 !important}
+  .deck{width:1280px;height:auto;aspect-ratio:auto;box-shadow:none;border:none;border-radius:0;margin:0;display:block}
+  .slide{display:flex !important;position:relative;width:1280px;height:720px;page-break-after:always;break-after:page;animation:none !important;opacity:1 !important}
+  .slide:last-child{page-break-after:auto;break-after:auto}
 }
 </style>
 </head>
