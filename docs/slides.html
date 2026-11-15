@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OUTPOST — NASA Space Apps 2026 · 7-slide deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3EFDB; --paper2:#FBF8EE; --ink:#122038; --ink2:#3a4a63;
+  --accent:#E2552D; --gold:#E0A22E; --teal:#178C88;
+  --head:'Chakra Petch', system-ui, sans-serif;
+  --mono:'IBM Plex Mono', ui-monospace, monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  background:#0b1222;
+  background-image:radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,.35), transparent),
+    radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,.25), transparent),
+    radial-gradient(1.5px 1.5px at 40% 80%, rgba(255,255,255,.3), transparent),
+    radial-gradient(1px 1px at 85% 20%, rgba(255,255,255,.25), transparent);
+  color:var(--ink);
+  font-family:var(--head);
+  display:flex;align-items:center;justify-content:center;min-height:100%;
+}
+.deck{
+  position:relative;width:min(96vw,1280px);aspect-ratio:16/9;
+  background:var(--paper);color:var(--ink);
+  border:3px solid var(--ink);border-radius:14px;
+  box-shadow:10px 10px 0 0 rgba(0,0,0,.55);overflow:hidden;
+}
+.slide{position:absolute;inset:0;padding:46px 54px;display:none;flex-direction:column}
+.slide.active{display:flex;animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.top{display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tag{background:var(--ink);color:var(--paper);padding:5px 12px;border-radius:30px;font-weight:600}
+h1{font-size:72px;font-weight:700;letter-spacing:.06em;margin:.15em 0 0;color:var(--accent);
+  text-shadow:3px 3px 0 rgba(18,32,56,.18)}
+h2{font-size:40px;font-weight:700;margin:.1em 0 .25em;line-height:1.05}
+.lead{font-size:24px;color:var(--ink2);line-height:1.35;margin:.2em 0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;flex:1;min-height:0}
+.cols.wide{grid-template-columns:1.05fr .95fr}
+ul{margin:.3em 0 0;padding:0;list-style:none}
+li{font-size:21px;line-height:1.5;margin:.42em 0;padding-left:30px;position:relative}
+li::before{content:"";position:absolute;left:0;top:.55em;width:13px;height:13px;border-radius:3px;
+  background:var(--accent);border:2px solid var(--ink)}
+li.t::before{background:var(--teal)} li.g::before{background:var(--gold)}
+.shot{width:100%;border:3px solid var(--ink);border-radius:10px;box-shadow:6px 6px 0 rgba(0,0,0,.35);display:block}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.chip{font-family:var(--mono);font-size:14px;font-weight:600;border:2px solid var(--ink);
+  border-radius:30px;padding:6px 13px;background:var(--paper2)}
+.chip.a{background:var(--accent);color:#fff;border-color:var(--ink)}
+.chip.g{background:var(--gold)} .chip.t{background:var(--teal);color:#fff}
+.big{font-size:28px;font-weight:700}
+.sys{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px;margin-top:12px}
+.sys div{font-size:20px;display:flex;gap:10px;align-items:center}
+.dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--ink);flex:none}
+.foot{position:absolute;left:54px;right:54px;bottom:20px;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:13px;color:var(--ink2);border-top:2px solid rgba(18,32,56,.18);padding-top:10px}
+.foot b{color:var(--accent)}
+.center{align-items:center;justify-content:center;text-align:center}
+.orbit{width:150px;height:150px}
+.pill{display:inline-block;font-family:var(--mono);font-size:20px;font-weight:600;background:var(--ink);
+  color:var(--paper);padding:10px 20px;border-radius:40px;margin-top:6px}
+.links{display:flex;flex-direction:column;gap:14px;font-size:22px}
+.links a{color:var(--accent);text-decoration:none;font-weight:600;font-family:var(--mono)}
+.links span{font-family:var(--mono);font-size:14px;color:var(--ink2);text-transform:uppercase;letter-spacing:.1em;display:block}
+.note{font-size:16px;color:var(--ink2);font-style:italic;margin-top:10px}
+/* nav */
+#nav{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:14px;
+  background:rgba(10,16,30,.8);padding:8px 14px;border-radius:40px;z-index:10}
+#nav button{font-family:var(--mono);font-weight:600;background:var(--paper);border:2px solid #000;border-radius:30px;
+  padding:7px 14px;cursor:pointer;font-size:14px}
+#dots{display:flex;gap:7px}
+.d{width:11px;height:11px;border-radius:50%;background:#55617a;cursor:pointer}
+.d.on{background:var(--accent)}
+#count{color:#cdd4e3;font-family:var(--mono);font-size:13px;min-width:44px;text-align:center}
+@media print{
+  @page{size:1280px 720px;margin:0}
+  body{background:#fff;display:block}
+  #nav{display:none}
+  .deck{width:1280px;height:720px;aspect-ratio:auto;box-shadow:none;border-radius:0;page-break-after:always;margin:0}
+  .slide{display:flex !important;position:relative;animation:none !important;opacity:1 !important}
+}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- 1 TITLE -->
+  <section class="slide active center">
+    <svg class="orbit" viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="46" fill="none" stroke="#122038" stroke-width="2" stroke-dasharray="4 5"/>
+      <circle cx="104" cy="52" r="6" fill="#178C88" stroke="#122038" stroke-width="2"/>
+      <g stroke="#E2552D" stroke-width="3" stroke-linecap="round">
+        <line x1="60" y1="60" x2="60" y2="22"/><line x1="60" y1="60" x2="90" y2="38"/>
+        <line x1="60" y1="60" x2="98" y2="60"/><line x1="60" y1="60" x2="90" y2="82"/>
+        <line x1="60" y1="60" x2="60" y2="98"/><line x1="60" y1="60" x2="30" y2="82"/>
+        <line x1="60" y1="60" x2="22" y2="60"/><line x1="60" y1="60" x2="30" y2="38"/>
+      </g>
+      <circle cx="60" cy="60" r="16" fill="#E2552D" stroke="#122038" stroke-width="3"/>
+    </svg>
+    <div class="tag" style="margin-top:14px">NASA Space Apps Challenge 2026</div>
+    <h1>OUTPOST</h1>
+    <div class="big" style="letter-spacing:.14em;color:var(--ink2);text-transform:uppercase;font-size:22px">Junior Astronaut Mission Trainer</div>
+    <p class="lead" style="max-width:24ch;margin-top:18px">Children <b>7–12</b> run a Moon or Mars base — using <b>real NASA data</b>.</p>
+    <div class="pill">outpost-junior-astronaut.vercel.app</div>
+    <div class="foot"><span>Challenge: <b>Build a Junior Astronaut Mission Trainer</b></span><span>1 / 7</span></div>
+  </section>
+
+  <!-- 2 CHALLENGE + GAP -->
+  <section class="slide">
+    <div class="top"><span class="tag">The challenge</span><span>01</span></div>
+    <h2>Kids 7–12, running a real outpost</h2>
+    <p class="lead">The brief: let children manage a lunar or Martian outpost and make <b>real decisions</b> — where every choice teaches something true.</p>
+    <div class="chips">
+      <span class="chip a">Life support</span><span class="chip">Radiation shielding</span>
+      <span class="chip g">Power budget</span><span class="chip t">Food</span><span class="chip">Comms delay</span>
+    </div>
+    <h2 style="margin-top:26px;font-size:30px">The gap we close</h2>
+    <p class="lead" style="font-size:22px">Most kids' space games <b>invent</b> their numbers. OUTPOST uses <b>real NASA data</b> — and stays <b>honest</b> about what's real and what's simplified for play.</p>
+    <div class="foot"><span>OUTPOST · Junior Astronaut Mission Trainer</span><span>2 / 7</span></div>
+  </section>
+
+  <!-- 3 THE GAME -->
+  <section class="slide">
+    <div class="top"><span class="tag">How it works</span><span>02</span></div>
+    <div class="cols wide">
+      <div>
+        <h2>One power budget. Five needs.</h2>
+        <p class="lead">Each <b>sol</b> (space day) you get limited <b>power</b>. Split it across five systems — you can't fund everything, so <b>every choice costs</b>.</p>
+        <div class="sys">
+          <div><span class="dot" style="background:#178C88"></span>Life support</div>
+          <div><span class="dot" style="background:#E2552D"></span>Shielding</div>
+          <div><span class="dot" style="background:#E0A22E"></span>Food</div>
+          <div><span class="dot" style="background:#178C88"></span>Science</div>
+          <div><span class="dot" style="background:#122038"></span>Crew rest</div>
+          <div><span class="dot" style="background:#E2552D"></span>Radiation ↑</div>
+        </div>
+        <p class="note">Moon = 10 sols · Mars = 12 sols · finishable in minutes.</p>
+      </div>
+      <img class="shot" src="./gameplay.jpg" alt="OUTPOST gameplay — splitting power across systems">
+    </div>
+    <div class="foot"><span>Spend power on shielding → science falls behind. No safe option.</span><span>3 / 7</span></div>
+  </section>
+
+  <!-- 4 REAL NASA DATA -->
+  <section class="slide">
+    <div class="top"><span class="tag">Real NASA data</span><span>03</span></div>
+    <div class="cols">
+      <div>
+        <h2>The hazards are real</h2>
+        <ul>
+          <li><b>NASA DONKI (live):</b> real solar flares from NASA's space-weather feed become your storms — with an archive of real historic flares (X28, X9.3, X8.7) as fallback.</li>
+          <li class="t"><b>Radiation:</b> Chang'e-4 LND (Moon ≈1.3 mSv/day), NASA RAD / Curiosity (Mars ≈0.64).</li>
+          <li class="g"><b>Environment:</b> sol = 24 h 39 m · lunar night ≈29.5 days · Earth–Mars comms 3–22 min.</li>
+        </ul>
+        <p class="note">In-app, every flare is tagged <b>live</b> vs <b>archive</b>, and every fact <b>REAL NASA DATA</b> vs <b>game model</b>.</p>
+      </div>
+      <img class="shot" src="./flare.jpg" alt="In-game solar storm warning sourced from NASA">
+    </div>
+    <div class="foot"><span>Not invented numbers — sourced, dated, and labelled.</span><span>4 / 7</span></div>
+  </section>
+
+  <!-- 5 IMPACT -->
+  <section class="slide">
+    <div class="top"><span class="tag">Why it matters</span><span>04</span></div>
+    <div class="cols">
+      <div>
+        <h2>Learning you can feel</h2>
+        <ul>
+          <li>Teaches <b>systems thinking & trade-offs</b>, not facts to memorize — the lesson sticks because the child feels each cost.</li>
+          <li class="t"><b>Free</b>, no account, works <b>offline</b> (installable PWA) — runs on a cheap school laptop or phone.</li>
+          <li class="g"><b>Bilingual</b> (English + Russian); plain language + built-in tutorial for ages 7–12.</li>
+          <li><b>Honest:</b> a page explains what's simplified → builds literacy, not misconceptions.</li>
+        </ul>
+      </div>
+      <img class="shot" src="./report.jpg" alt="Mission report listing the real NASA datasets used">
+    </div>
+    <div class="foot"><span>The mission report cites the exact NASA datasets the player relied on.</span><span>5 / 7</span></div>
+  </section>
+
+  <!-- 6 HOW WE BUILT IT -->
+  <section class="slide">
+    <div class="top"><span class="tag">How we built it</span><span>05</span></div>
+    <h2>Lightweight, open, tested</h2>
+    <div class="chips" style="margin-top:4px">
+      <span class="chip">React 18</span><span class="chip">TypeScript</span><span class="chip">Vite</span>
+      <span class="chip">Tailwind CSS</span><span class="chip t">PWA / offline</span><span class="chip a">NASA DONKI API</span>
+      <span class="chip g">Recharts</span><span class="chip">Zustand</span><span class="chip">Vitest · 18 tests</span><span class="chip">Vercel</span>
+    </div>
+    <ul style="margin-top:20px">
+      <li>Pure game-model with <b>18 automated tests</b>; live NASA data with a safe offline fallback.</li>
+      <li class="t">Deployed on <b>Vercel</b>, <b>open-source</b> on GitHub, fast and installable.</li>
+      <li class="g"><b>Use of AI (disclosed):</b> an AI assistant helped write code and assemble the demo; all design, data choices, balancing and testing were directed and verified by the team. No fabricated numbers are presented as NASA data.</li>
+    </ul>
+    <div class="foot"><span>github.com/Mukaltin0224/outpost-junior-astronaut</span><span>6 / 7</span></div>
+  </section>
+
+  <!-- 7 TRY IT -->
+  <section class="slide">
+    <div class="top"><span class="tag">Try it · 60 seconds</span><span>06</span></div>
+    <div class="cols wide">
+      <div>
+        <h2>See it for yourself</h2>
+        <div class="links">
+          <div><span>Play live</span><a href="https://outpost-junior-astronaut.vercel.app">outpost-junior-astronaut.vercel.app</a></div>
+          <div><span>Open-source code</span><a href="https://github.com/Mukaltin0224/outpost-junior-astronaut">github.com/Mukaltin0224/outpost-junior-astronaut</a></div>
+        </div>
+        <p class="lead" style="font-size:20px;margin-top:18px">Open → pick <b>Moon</b> → play 2–3 sols → a <b>real flare</b> hits → finish to the report that lists the NASA datasets.</p>
+      </div>
+      <div class="center">
+        <svg class="orbit" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="46" fill="none" stroke="#122038" stroke-width="2" stroke-dasharray="4 5"/>
+          <circle cx="104" cy="52" r="6" fill="#178C88" stroke="#122038" stroke-width="2"/>
+          <circle cx="60" cy="60" r="16" fill="#E2552D" stroke="#122038" stroke-width="3"/>
+        </svg>
+        <div class="chips" style="justify-content:center;margin-top:20px">
+          <span class="chip a">Impact</span><span class="chip">Creativity</span><span class="chip g">Validity</span>
+          <span class="chip t">Relevance</span><span class="chip">Presentation</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span><b>OUTPOST</b> — real NASA data, in a game a 7-year-old can play.</span><span>7 / 7</span></div>
+  </section>
+
+</div>
+
+<div id="nav">
+  <button id="prev">◀ Prev</button>
+  <div id="dots"></div>
+  <span id="count">1 / 7</span>
+  <button id="next">Next ▶</button>
+</div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const dots=document.getElementById('dots');
+let i=0;
+slides.forEach((_,n)=>{const d=document.createElement('div');d.className='d'+(n===0?' on':'');d.onclick=()=>go(n);dots.appendChild(d);});
+function go(n){
+  i=Math.max(0,Math.min(slides.length-1,n));
+  slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+  [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i));
+  document.getElementById('count').textContent=(i+1)+' / '+slides.length;
+}
+document.getElementById('next').onclick=()=>go(i+1);
+document.getElementById('prev').onclick=()=>go(i-1);
+document.getElementById('deck').onclick=e=>{if(e.target.closest('a'))return;go(i+1);};
+addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+  if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+});
+</script>
+</body>
+</html>
